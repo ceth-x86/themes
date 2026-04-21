@@ -39,37 +39,37 @@ M.scheme = {
   },
 
   tab_bar = {
-    background = '#F8F4EA',
-    inactive_tab_edge = '#F8F4EA',
+    background = '#F2EDE3',
+    inactive_tab_edge = '#CFC9B9',
 
     active_tab = {
-      bg_color = '#F2EDE3',
-      fg_color = '#100F0F',
+      bg_color = '#FFFCF0',
+      fg_color = '#197870',
       intensity = 'Bold',
-      underline = 'None',
+      underline = 'Single',
       italic = false,
       strikethrough = false,
     },
 
     inactive_tab = {
-      bg_color = '#F8F4EA',
-      fg_color = '#6D6C67',
+      bg_color = '#E6E0D0',
+      fg_color = '#403E3C',
       intensity = 'Normal',
     },
 
     inactive_tab_hover = {
-      bg_color = '#F2EDE3',
+      bg_color = '#F8F4EA',
       fg_color = '#100F0F',
       italic = false,
     },
 
     new_tab = {
-      bg_color = '#F8F4EA',
-      fg_color = '#6D6C67',
+      bg_color = '#E6E0D0',
+      fg_color = '#403E3C',
     },
 
     new_tab_hover = {
-      bg_color = '#F2EDE3',
+      bg_color = '#F8F4EA',
       fg_color = '#100F0F',
     },
   },
