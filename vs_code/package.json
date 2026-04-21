@@ -1,0 +1,22 @@
+{
+  "name": "stradarium-modern",
+  "displayName": "Stradarium Modern",
+  "description": "A warm light VS Code theme inspired by editorial terminal colors",
+  "version": "0.0.1",
+  "publisher": "ceth",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Stradarium Modern",
+        "uiTheme": "vs",
+        "path": "./themes/stradarium-modern-color-theme.json"
+      }
+    ]
+  }
+}
