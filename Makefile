@@ -18,7 +18,18 @@ OBSIDIAN_THEME_SRC_FILE := obsidian/$(OBSIDIAN_THEME_NAME).css
 OBSIDIAN_BUILD_DIR := build/obsidian
 OBSIDIAN_BUILD_FILE := $(OBSIDIAN_BUILD_DIR)/$(OBSIDIAN_THEME_NAME).css
 
-.PHONY: help alfred-build alfred-package alfred-install kaku-build kaku-package kaku-install obsidian-build obsidian-install clean
+CHROME_THEME_NAME := stradarium-modern
+CHROME_THEME_SRC_DIR := chrome
+CHROME_BUILD_DIR := build/chrome/$(CHROME_THEME_NAME)
+CHROME_ZIP_FILE := build/chrome/$(CHROME_THEME_NAME).zip
+
+VS_CODE_EXTENSION_NAME := stradarium-modern
+VS_CODE_BUILD_DIR := build/vs_code
+VS_CODE_BUILD_FILE := $(VS_CODE_BUILD_DIR)/$(VS_CODE_EXTENSION_NAME).vsix
+VSCE_BIN := /opt/homebrew/bin/vsce
+CODE_BIN := /opt/homebrew/bin/code
+
+.PHONY: help alfred-build alfred-package alfred-install kaku-build kaku-package kaku-install obsidian-build obsidian-install chrome-build chrome-package vscode-build vscode-install clean
 
 help:
 	@printf "Targets:\n"
@@ -31,6 +42,10 @@ help:
 	@printf "  make obsidian-build  Copy Obsidian snippet into build/obsidian\n"
 	@printf "  make obsidian-install Install the Obsidian snippet into a vault snippets directory\n"
 	@printf "                       Use OBSIDIAN_SNIPPETS_DIR=/path/to/vault/.obsidian/snippets\n"
+	@printf "  make chrome-build    Copy the Chrome theme into build/chrome\n"
+	@printf "  make chrome-package  Create a zip archive for the Chrome theme\n"
+	@printf "  make vscode-build    Package the VS Code theme into build/vs_code\n"
+	@printf "  make vscode-install  Install the packaged VS Code theme locally\n"
 	@printf "  make clean           Remove build artifacts\n"
 
 alfred-build:
@@ -76,6 +91,27 @@ obsidian-install: obsidian-build
 	@mkdir -p "$(OBSIDIAN_SNIPPETS_DIR)"
 	@cp "$(OBSIDIAN_BUILD_FILE)" "$(OBSIDIAN_SNIPPETS_DIR)/$(OBSIDIAN_THEME_NAME).css"
 	@printf "Installed snippet to %s/%s.css\n" "$(OBSIDIAN_SNIPPETS_DIR)" "$(OBSIDIAN_THEME_NAME)"
+
+chrome-build:
+	@mkdir -p "$(CHROME_BUILD_DIR)"
+	@cp "$(CHROME_THEME_SRC_DIR)/manifest.json" "$(CHROME_BUILD_DIR)/manifest.json"
+	@printf "Built %s\n" "$(CHROME_BUILD_DIR)"
+
+chrome-package: chrome-build
+	@mkdir -p "$(dir $(CHROME_ZIP_FILE))"
+	@rm -f "$(CHROME_ZIP_FILE)"
+	@cd build/chrome && zip -rq "$(notdir $(CHROME_ZIP_FILE))" "$(CHROME_THEME_NAME)"
+	@printf "Packaged %s\n" "$(CHROME_ZIP_FILE)"
+
+vscode-build:
+	@mkdir -p "$(VS_CODE_BUILD_DIR)"
+	@rm -f "$(VS_CODE_BUILD_DIR)"/*.vsix
+	@cd vs_code && "$(VSCE_BIN)" package --out "../$(VS_CODE_BUILD_FILE)"
+	@printf "Built %s\n" "$(VS_CODE_BUILD_FILE)"
+
+vscode-install: vscode-build
+	@"$(CODE_BIN)" --install-extension "$(VS_CODE_BUILD_FILE)" --force
+	@printf "Installed extension from %s\n" "$(VS_CODE_BUILD_FILE)"
 
 clean:
 	@rm -rf build

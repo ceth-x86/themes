@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Stradarium Modern",
+  "version": "0.0.1",
+  "description": "A warm light Google Chrome theme inspired by the Stradarium palette.",
+  "theme": {
+    "colors": {
+      "frame": [230, 224, 208],
+      "frame_inactive": [222, 218, 198],
+      "frame_incognito": [214, 208, 192],
+      "frame_incognito_inactive": [207, 201, 185],
+      "toolbar": [255, 252, 240],
+      "tab_background_text": [109, 108, 103],
+      "tab_text": [16, 15, 15],
+      "bookmark_text": [64, 62, 60],
+      "ntp_background": [255, 252, 240],
+      "ntp_text": [16, 15, 15],
+      "ntp_link": [32, 94, 166],
+      "ntp_header": [64, 62, 60],
+      "ntp_section": [248, 244, 234],
+      "ntp_section_text": [16, 15, 15],
+      "button_background": [230, 224, 208]
+    },
+    "tints": {
+      "buttons": [0.14, 0.2, 0.62]
+    },
+    "properties": {
+      "ntp_background_alignment": "top"
+    }
+  }
+}

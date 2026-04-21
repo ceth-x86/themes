@@ -1,0 +1,3 @@
+build/
+*.vsix
+.DS_Store
