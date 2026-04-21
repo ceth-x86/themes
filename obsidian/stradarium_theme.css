@@ -1,0 +1,351 @@
+:root {
+  /* Core palette */
+  --str-paper: #FFFCF0;
+  --str-panel: #F8F4EA;
+  --str-panel-muted: #F2EDE3;
+  --str-panel-active: #EDE7DA;
+  --str-border: #CFC9B9;
+  --str-border-subtle: #E6E0D0;
+  --str-border-strong: #BEB8A8;
+
+  --str-ink: #100F0F;
+  --str-text-secondary: #403E3C;
+  --str-text-muted: #6D6C67;
+  --str-text-faint: #B4AE9E;
+
+  --str-blue: #205EA6;
+  --str-teal: #197870;
+  --str-magenta: #A02F6F;
+  --str-ochre: #8D6400;
+  --str-green: #5B7500;
+  --str-red: #C13D31;
+
+  /* Obsidian / Minimal variables */
+  --color-accent: var(--str-blue);
+  --color-accent-1: var(--str-blue);
+  --color-accent-2: var(--str-teal);
+  --interactive-accent-rgb: 32, 94, 166;
+
+  --background-primary: var(--str-paper);
+  --background-primary-alt: var(--str-panel);
+  --background-secondary: var(--str-panel);
+  --background-secondary-alt: var(--str-panel-muted);
+  --background-modifier-hover: var(--str-panel-muted);
+  --background-modifier-active-hover: var(--str-panel-active);
+  --background-modifier-border: var(--str-border);
+  --background-modifier-border-hover: var(--str-border-strong);
+
+  --interactive-normal: var(--str-panel);
+  --interactive-hover: var(--str-panel-muted);
+  --interactive-accent: var(--str-blue);
+  --interactive-accent-hover: var(--str-teal);
+
+  --text-normal: var(--str-ink);
+  --text-muted: var(--str-text-muted);
+  --text-faint: var(--str-text-faint);
+  --text-on-accent: var(--str-paper);
+  --text-accent: var(--str-blue);
+  --text-accent-hover: var(--str-teal);
+
+  --titlebar-background: var(--str-panel);
+  --titlebar-background-focused: var(--str-panel);
+  --tab-container-background: var(--str-panel);
+  --tab-background-active: var(--str-paper);
+  --tab-background-inactive: var(--str-panel-muted);
+  --tab-text-color: var(--str-text-secondary);
+  --tab-text-color-active: var(--str-ink);
+  --tab-divider-color: var(--str-border);
+  --tab-outline-color: var(--str-border);
+
+  --vault-profile-color: var(--str-ink);
+  --vault-name-color: var(--str-ink);
+  --nav-item-color: var(--str-text-secondary);
+  --nav-item-color-hover: var(--str-ink);
+  --nav-item-background-hover: var(--str-panel-muted);
+  --nav-item-background-active: var(--str-panel-active);
+  --nav-item-color-active: var(--str-ink);
+
+  --h1-color: var(--str-ink);
+  --h2-color: var(--str-ink);
+  --h3-color: var(--str-ink);
+  --h4-color: var(--str-ink);
+  --h5-color: var(--str-ink);
+  --h6-color: var(--str-ink);
+
+  --link-color: var(--str-blue);
+  --link-color-hover: var(--str-teal);
+  --link-unresolved-color: var(--str-magenta);
+  --link-unresolved-opacity: 0.9;
+  --link-external-color: var(--str-teal);
+
+  --text-selection: rgba(32, 94, 166, 0.16);
+  --caret-color: var(--str-ink);
+
+  --blockquote-border-color: var(--str-teal);
+  --blockquote-color: var(--str-text-secondary);
+
+  --code-normal: var(--str-ink);
+  --code-background: var(--str-panel);
+  --code-comment: var(--str-text-muted);
+  --code-function: var(--str-blue);
+  --code-keyword: var(--str-magenta);
+  --code-important: var(--str-red);
+  --code-operator: var(--str-text-muted);
+  --code-property: var(--str-teal);
+  --code-punctuation: var(--str-text-muted);
+  --code-string: var(--str-green);
+  --code-tag: var(--str-teal);
+  --code-value: var(--str-ochre);
+
+  --table-border-color: var(--str-border);
+  --table-header-border-color: var(--str-border-strong);
+  --table-header-background: var(--str-panel);
+  --table-row-alt-background: #FCF8EE;
+  --hr-color: var(--str-border);
+
+  --list-marker-color: var(--str-ochre);
+  --indentation-guide-color: var(--str-border-subtle);
+  --indentation-guide-color-active: var(--str-text-faint);
+
+  --checkbox-color: var(--str-blue);
+  --checkbox-color-hover: var(--str-teal);
+  --checkbox-border-color: var(--str-border);
+  --checklist-done-color: var(--str-text-muted);
+
+  --tag-color: var(--str-teal);
+  --tag-background: rgba(25, 120, 112, 0.10);
+  --tag-color-hover: var(--str-blue);
+  --tag-background-hover: rgba(32, 94, 166, 0.12);
+
+  --embed-background: var(--str-panel);
+  --embed-border-left: 1px solid var(--str-border);
+
+  --callout-note: var(--str-blue);
+  --callout-tip: var(--str-green);
+  --callout-important: var(--str-magenta);
+  --callout-warning: var(--str-ochre);
+  --callout-danger: var(--str-red);
+}
+
+/* Keep editor and preview on the same paper surface. */
+.workspace-leaf-content[data-type="markdown"] .view-content,
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  background: var(--str-paper);
+  color: var(--str-ink);
+}
+
+/* Tabs only need light steering, not a full restyle. */
+.workspace-tab-header {
+  background-color: var(--str-panel-muted) !important;
+  border-top: 2px solid transparent !important;
+  border-left: 0 !important;
+  border-right: 1px solid var(--str-border) !important;
+  border-bottom: 1px solid var(--str-border) !important;
+  box-shadow: none !important;
+}
+
+.workspace-tab-header.is-active {
+  background-color: var(--str-paper) !important;
+  border-top: 2px solid var(--str-teal) !important;
+  border-left: 1px solid var(--str-border) !important;
+  border-right: 1px solid var(--str-border) !important;
+  border-bottom: 1px solid var(--str-paper) !important;
+  box-shadow: none !important;
+}
+
+.workspace-tab-header .workspace-tab-header-inner,
+.workspace-tab-header.is-active .workspace-tab-header-inner,
+.workspace-tab-header .workspace-tab-header-inner-icon,
+.workspace-tab-header .workspace-tab-header-inner-close-button,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
+.workspace-tab-header .workspace-tab-header-status-container,
+.workspace-tab-header .workspace-tab-header-status-icon,
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner,
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
+.workspace-tab-header.is-active .workspace-tab-header-status-container,
+.workspace-tab-header.is-active .workspace-tab-header-status-icon {
+  background-color: var(--str-paper) !important;
+  box-shadow: none !important;
+}
+
+.workspace-tab-header .workspace-tab-header-inner-title,
+.workspace-tab-header .workspace-tab-header-inner-icon,
+.workspace-tab-header .workspace-tab-header-inner-close-button {
+  color: var(--str-text-secondary) !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+  color: var(--str-ink) !important;
+  font-weight: 600;
+}
+
+/* Links and selections should remain clear without looking neon. */
+.cm-link,
+.cm-url,
+a.internal-link,
+a.external-link {
+  color: var(--str-blue);
+}
+
+.markdown-source-view.mod-cm6 .cm-activeLine {
+  background: rgba(141, 100, 0, 0.05);
+}
+
+.markdown-source-view.mod-cm6 .cm-selectionBackground,
+::selection {
+  background: rgba(32, 94, 166, 0.16) !important;
+}
+
+.search-result-file-match,
+.cm-search-result {
+  background: rgba(141, 100, 0, 0.18);
+  color: var(--str-ink);
+}
+
+/* Editorial accents */
+blockquote {
+  background: rgba(25, 120, 112, 0.05);
+  border-left: 3px solid var(--str-teal);
+  padding: 0.75em 1em;
+}
+
+pre,
+.HyperMD-codeblock,
+.cm-inline-code {
+  background: var(--str-panel) !important;
+  border: 1px solid var(--str-border);
+  border-radius: 6px;
+}
+
+a.tag,
+.tag {
+  color: var(--str-teal);
+  background: rgba(25, 120, 112, 0.10);
+  border: 1px solid rgba(25, 120, 112, 0.12);
+  border-radius: 999px;
+  padding: 0.1em 0.55em;
+}
+
+.is-flashing,
+.mod-warning {
+  color: var(--str-ochre);
+}
+
+.mod-error,
+.is-error {
+  color: var(--str-red);
+}
+
+/* Stronger chrome separation for Minimal sidebars and headers. */
+.workspace,
+.workspace-sidebar,
+.workspace-split.mod-left-split,
+.workspace-sidedock-vault-profile,
+.workspace-ribbon.mod-left,
+.nav-folder.mod-root > .nav-folder-title,
+.workspace-tab-container,
+.workspace-split.mod-right-split,
+.view-header,
+.workspace-tabs .workspace-tab-header-container {
+  background: var(--str-panel) !important;
+}
+
+.workspace-tabs .workspace-tab-header-container,
+.view-header {
+  background-color: var(--str-panel) !important;
+  border-bottom: 1px solid var(--str-border) !important;
+}
+
+.workspace-sidebar .workspace-tab-container,
+.workspace-sidebar .workspace-leaf,
+.workspace-sidebar .workspace-leaf-content,
+.workspace-sidebar .view-content,
+.workspace-sidebar .nav-files-container,
+.workspace-sidebar .tree-item-children,
+.workspace-sidebar .search-result-container,
+.workspace-sidebar .search-empty-state,
+.workspace-sidebar .outline,
+.workspace-sidebar .outline-tree,
+.workspace-sidebar .tag-container,
+.workspace-sidebar .backlink-pane,
+.workspace-sidebar .empty-state {
+  background: var(--str-panel) !important;
+}
+
+.mod-left-split .view-content,
+.mod-right-split .view-content,
+.mod-left-split .workspace-leaf-content,
+.mod-right-split .workspace-leaf-content {
+  background: var(--str-panel) !important;
+}
+
+.workspace-leaf,
+.view-content,
+.workspace-leaf-content,
+.mod-root .workspace-leaf-content {
+  background: var(--str-paper) !important;
+}
+
+.mod-root .workspace-leaf.mod-active,
+.mod-root .workspace-leaf.mod-active .view-content,
+.mod-root .workspace-leaf.mod-active .workspace-leaf-content {
+  background: var(--str-paper) !important;
+}
+
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle,
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+  background-color: var(--str-border) !important;
+}
+
+.nav-file-title,
+.nav-folder-title,
+.workspace-tab-header-inner-title,
+.clickable-icon,
+.side-dock-ribbon-action {
+  color: var(--str-text-secondary) !important;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover,
+.clickable-icon:hover,
+.side-dock-ribbon-action:hover {
+  color: var(--str-ink) !important;
+  background: var(--str-panel-muted) !important;
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background: var(--str-panel-muted) !important;
+  color: var(--str-ink) !important;
+}
+
+.side-dock-ribbon-action,
+.workspace-tab-header-inner-icon {
+  color: var(--str-text-muted) !important;
+}
+
+.search-input-container input,
+.workspace-sidebar input,
+.workspace-sidebar textarea {
+  background: var(--str-panel-muted) !important;
+  border-color: var(--str-border) !important;
+  color: var(--str-ink) !important;
+}
+
+.search-result-file-title,
+.tree-item-self,
+.workspace-sidebar .view-header-title,
+.workspace-sidebar .view-action,
+.workspace-sidebar .collapse-icon {
+  color: var(--str-text-secondary) !important;
+}

@@ -1,0 +1,65 @@
+{
+  "alfredtheme": {
+    "name": "Stradarium Modern",
+    "credit": "ceth",
+    "visualEffectMode": 1,
+    "window": {
+      "color": "#FFFCF0F4",
+      "paddingHorizontal": 12,
+      "width": 680,
+      "borderPadding": 1,
+      "borderColor": "#CFC9B9E6",
+      "blur": 0,
+      "roundness": 24,
+      "paddingVertical": 12
+    },
+    "search": {
+      "background": "#F8F4EAF7",
+      "backgroundSelected": "#F2EDE3FF",
+      "paddingHorizontal": 10,
+      "spacing": 8,
+      "text": {
+        "size": 38,
+        "colorSelected": "#205EA6FF",
+        "font": "System",
+        "color": "#100F0FFF"
+      },
+      "roundness": 18,
+      "paddingVertical": 9
+    },
+    "result": {
+      "textSpacing": 9,
+      "subtext": {
+        "size": 14,
+        "colorSelected": "#403E3CFF",
+        "font": "System",
+        "color": "#403E3CC4"
+      },
+      "shortcut": {
+        "size": 17,
+        "colorSelected": "#8D6400FF",
+        "font": "System",
+        "color": "#6D6C67D8"
+      },
+      "backgroundSelected": "#F2EDE3FF",
+      "text": {
+        "size": 21,
+        "colorSelected": "#100F0FFF",
+        "font": "System",
+        "color": "#100F0FEA"
+      },
+      "iconPaddingHorizontal": 8,
+      "roundness": 14,
+      "paddingVertical": 6,
+      "iconSize": 34
+    },
+    "separator": {
+      "color": "#E6E0D0FF",
+      "thickness": 1
+    },
+    "scrollbar": {
+      "color": "#CFC9B999",
+      "thickness": 4
+    }
+  }
+}
