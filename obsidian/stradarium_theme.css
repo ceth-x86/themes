@@ -381,3 +381,45 @@ a.tag,
 .workspace-sidebar .collapse-icon {
   color: var(--str-text-secondary) !important;
 }
+
+.mod-left-split,
+.mod-right-split {
+  --font-ui-small: 15px;
+  --font-ui-smaller: 14px;
+  --font-adaptive-small: 15px;
+  --nav-item-size: 15px;
+  --metadata-label-font-size: 15px;
+  --metadata-input-font-size: 15px;
+  --metadata-font-size: 15px;
+}
+
+.mod-left-split .workspace-leaf-content[data-type="file-explorer"] .view-content,
+.mod-left-split .workspace-leaf-content[data-type="bookmarks"] .view-content,
+.mod-left-split .workspace-leaf-content[data-type="search"] .view-content,
+.mod-right-split .workspace-leaf-content[data-type="all-properties"] .view-content,
+.mod-right-split .workspace-leaf-content[data-type="backlink"] .view-content,
+.mod-right-split .workspace-leaf-content[data-type="outgoing-link"] .view-content {
+  font-size: 15px !important;
+  line-height: 1.45;
+}
+
+.workspace-sidebar .nav-file-title,
+.workspace-sidebar .nav-folder-title,
+.workspace-sidebar .nav-file-title-content,
+.workspace-sidebar .nav-folder-title-content,
+.workspace-sidebar .tree-item-inner,
+.workspace-sidebar .tree-item-self .tree-item-inner,
+.workspace-sidebar .search-result-file-title,
+.workspace-sidebar .search-result-file-match,
+.workspace-sidebar .search-result-file-matches,
+.workspace-sidebar .tag-pane-tag-text,
+.workspace-sidebar .metadata-property-key,
+.workspace-sidebar .metadata-property-key-input,
+.workspace-sidebar .metadata-property-value,
+.workspace-sidebar .metadata-input-longtext,
+.workspace-sidebar .multi-select-pill-content,
+.workspace-sidebar .view-content .tree-item,
+.workspace-sidebar .view-content .tree-item-self {
+  font-size: 15px !important;
+  line-height: 1.45;
+}
