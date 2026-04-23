@@ -24,11 +24,13 @@
     "editorBracketMatch.border": "#197870",
 
     // < --
-    "editorGroupHeader.tabsBackground": "#F8F4EA",
-    "editorGroupHeader.noTabsBackground": "#F8F4EA",
-    "editorGroupHeader.border": "#CFC9B9",
-    "tab.unfocusedActiveBackground": "#FFFCF0",
-    "tab.unfocusedInactiveBackground": "#F2EDE3",
+    "editorGroupHeader.tabsBackground": "#F6F2E8",
+    "editorGroupHeader.noTabsBackground": "#F6F2E8",
+    "editorGroupHeader.border": "#E6E0D0",
+    "tab.unfocusedActiveBackground": "#E8E2D6",
+    "tab.unfocusedActiveForeground": "#403E3C",
+    "tab.unfocusedInactiveBackground": "#FBF7EF",
+    "tab.unfocusedInactiveForeground": "#6D6C67",
     "editorPane.background": "#FFFCF0",
     // -- >
 
@@ -75,12 +77,14 @@
     "statusBar.debuggingBackground": "#A02F6F",
     "statusBar.debuggingForeground": "#FFFCF0",
 
-    "tab.activeBackground": "#FFFCF0",
+    "tab.activeBackground": "#E8E2D6",
     "tab.activeForeground": "#100F0F",
-    "tab.inactiveBackground": "#F2EDE3",
+    "tab.inactiveBackground": "#FBF7EF",
     "tab.inactiveForeground": "#6D6C67",
-    "tab.border": "#CFC9B9",
-    "tab.activeBorderTop": "#197870",
+    "tab.border": "#E6E0D0",
+    "tab.hoverBackground": "#F8F4EA",
+    "tab.unfocusedHoverBackground": "#F8F4EA",
+    "tab.activeBorderTop": "#F8F4EA",
 
     "input.background": "#F8F4EA",
     "input.foreground": "#100F0F",
