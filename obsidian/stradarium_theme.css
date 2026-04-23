@@ -138,6 +138,14 @@
   color: var(--str-ink);
 }
 
+.workspace-leaf-content[data-type="markdown"] .inline-title {
+  color: var(--str-ink) !important;
+  font-size: 36px !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+}
+
 /* Tabs should feel flatter and calmer, closer to Chrome than to file cards. */
 .workspace-tabs .workspace-tab-header-container-inner {
   gap: 0 !important;
