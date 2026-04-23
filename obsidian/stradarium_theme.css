@@ -1,9 +1,12 @@
 :root {
   /* Core palette */
   --str-paper: #FFFCF0;
+  --str-paper-lift: #FEFBF1;
   --str-panel: #F8F4EA;
   --str-panel-muted: #F2EDE3;
-  --str-panel-active: #EDE7DA;
+  --str-panel-active: #ECE5D8;
+  --str-tab-strip: #F3EEE3;
+  --str-tab-idle: #F1EBDF;
   --str-border: #CFC9B9;
   --str-border-subtle: #E6E0D0;
   --str-border-strong: #BEB8A8;
@@ -135,23 +138,53 @@
   color: var(--str-ink);
 }
 
-/* Tabs only need light steering, not a full restyle. */
+/* Tabs should feel flatter and calmer, closer to Chrome than to file cards. */
+.workspace-tabs .workspace-tab-header-container-inner {
+  gap: 0 !important;
+  padding: 0 10px !important;
+}
+
 .workspace-tab-header {
-  background-color: var(--str-panel-muted) !important;
-  border-top: 2px solid transparent !important;
-  border-left: 0 !important;
-  border-right: 1px solid var(--str-border) !important;
-  border-bottom: 1px solid var(--str-border) !important;
+  position: relative;
+  margin: 0 2px 0 0 !important;
+  background-color: var(--str-tab-idle) !important;
+  border: 0 !important;
+  border-radius: 12px 12px 0 0 !important;
   box-shadow: none !important;
+  overflow: clip !important;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.workspace-tab-header::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 26%;
+  bottom: 26%;
+  width: 1px;
+  background: var(--str-border);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.workspace-tab-header:hover {
+  background-color: #F5F0E6 !important;
+}
+
+.workspace-tab-header:hover::after,
+.workspace-tab-header.is-active::after,
+.workspace-tab-header:last-child::after {
+  opacity: 0;
 }
 
 .workspace-tab-header.is-active {
   background-color: var(--str-paper) !important;
-  border-top: 2px solid var(--str-teal) !important;
-  border-left: 1px solid var(--str-border) !important;
-  border-right: 1px solid var(--str-border) !important;
-  border-bottom: 1px solid var(--str-paper) !important;
-  box-shadow: none !important;
+  box-shadow:
+    inset 1px 0 0 var(--str-border-subtle),
+    inset -1px 0 0 var(--str-border-subtle),
+    inset 0 1px 0 var(--str-border),
+    inset 0 -1px 0 var(--str-paper) !important;
+  z-index: 2;
 }
 
 .workspace-tab-header .workspace-tab-header-inner,
@@ -161,8 +194,7 @@
 .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
 .workspace-tab-header .workspace-tab-header-status-container,
 .workspace-tab-header .workspace-tab-header-status-icon,
-.workspace-tab-header.is-active::before,
-.workspace-tab-header.is-active::after {
+.workspace-tab-header.is-active::before {
   background-color: transparent !important;
   box-shadow: none !important;
 }
@@ -172,14 +204,14 @@
 .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
 .workspace-tab-header.is-active .workspace-tab-header-status-container,
 .workspace-tab-header.is-active .workspace-tab-header-status-icon {
-  background-color: var(--str-paper) !important;
+  background-color: transparent !important;
   box-shadow: none !important;
 }
 
 .workspace-tab-header .workspace-tab-header-inner-title,
 .workspace-tab-header .workspace-tab-header-inner-icon,
 .workspace-tab-header .workspace-tab-header-inner-close-button {
-  color: var(--str-text-secondary) !important;
+  color: var(--str-text-muted) !important;
 }
 
 .workspace-tab-header.is-active .workspace-tab-header-inner-title,
@@ -262,7 +294,7 @@ a.tag,
 
 .workspace-tabs .workspace-tab-header-container,
 .view-header {
-  background-color: var(--str-panel) !important;
+  background-color: var(--str-tab-strip) !important;
   border-bottom: 1px solid var(--str-border) !important;
 }
 
